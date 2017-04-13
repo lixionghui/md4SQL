@@ -55,3 +55,25 @@ select dateadd(ms,-3,dateadd(yy, datediff(yy,0,getdate())+1, 0))
 --本月的第一个星期一：2013-12-02 00：00：00.000   
 select dateadd(wk, datediff(wk,0, dateadd(dd,6-datepart(day,getdate()),getdate())), 0) 
 ```
+
+## 分析函数（窗口函数）
+
+### 累计求和
+
+有数据
+序号 数据 递进和值
+1 100 100
+2 200 300
+3 150 450
+4 300 750
+
+即下一条 递进求和值是上面所有行的和值，能否用SQL视图处理。
+```sql
+create view vw_withsummary as
+select id, data
+    , (select sum(data) 
+       from thetable b
+       where b.id <= a.id
+      ) as summary
+from thetable a
+```
