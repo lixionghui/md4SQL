@@ -62,10 +62,15 @@ select dateadd(wk, datediff(wk,0, dateadd(dd,6-datepart(day,getdate()),getdate()
 
 有数据
 序号 数据 递进和值
+
 1 100 100
+
 2 200 300
+
 3 150 450
+
 4 300 750
+
 
 即下一条 递进求和值是上面所有行的和值，能否用SQL视图处理。
 ```sql
