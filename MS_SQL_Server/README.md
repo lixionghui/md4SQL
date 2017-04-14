@@ -4,6 +4,11 @@
 
 取消注释：Ctrl+K、Ctrl+U（按住Ctrl,然后K、U）
 
+### 随机取记录
+```sql
+select top n * from tableA order by newid()
+```
+
 ### How to drop a table if it exists in SQL Server?
 
 物理表
@@ -19,6 +24,11 @@ IF OBJECT_ID('tempdb.dbo.#T', 'U') IS NOT NULL
 ```
 
 ## 时间日期
+
+### CAST DATE
+```sql
+cast(datetime as date)
+```
 
 ### Trunc_Date
 ```sql
