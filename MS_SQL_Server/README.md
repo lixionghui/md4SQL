@@ -23,6 +23,29 @@ IF OBJECT_ID('tempdb.dbo.#T', 'U') IS NOT NULL
   DROP TABLE #T; 
 ```
 
+## 创建表
+
+```sql
+use db_sqlserver  
+go  
+create table #db_local_table  
+(  
+  id  int,  
+  name varchar(50),  
+  age int,  
+  area int  
+)  
+```
+
+
+## 声明变量
+
+```sql
+DECLARE @count int
+SET @count=123
+PRINT @count
+```
+
 ## 时间日期
 
 ### CAST DATE
